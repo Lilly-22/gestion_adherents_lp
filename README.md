@@ -38,7 +38,6 @@ Le club "LyonPalme" est une association sportive de natation avec palmes : monop
 
 ## Diagramme de classe
 
-<img width="676" alt="Diagramme de classe GA" src="https://github.com/user-attachments/assets/5679a5ce-e03b-4818-85fd-38d37528e81d" />
 
 
 ## Prérequis
