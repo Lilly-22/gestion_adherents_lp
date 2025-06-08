@@ -1,66 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gestion des Adhérents - LyonPalme
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![readme_logo__1_](https://github.com/user-attachments/assets/841f5181-8b7b-4d87-8a26-13521fc9b991)
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Sommaire
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Description](#description)
+- [Technologies Utilisées](#technologies-utilisées)
+- [Diagramme de cas d'utilisation](#utilisation)
+- [Diagramme de classe](#diagramme-de-classe)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Créer le premier user](#créer-le-premier-user)
+- [Utilisation](#utilisation)
 
-## Learning Laravel
+## Description
+Le club "LyonPalme" est une association sportive de natation avec palmes : monopalme ou bi-palmes. Il compte une quarantaine d'adhérents et son siège est à Saint-Fons. L'application de gestion des adhérents permet de gérer les comptes des membres du club. Ce site est destiné aux secrétaires du club dans un premier temps qui pourrons se connecter à l’application, visualiser les adhérents inscrits, procéder à l’inscription des nouveaux adhérents et archiver les anciens adhérents. Dans un second temps, l’application permet aux nageurs connectés au site d’afficher le trombinoscope (avec la photo, nom et prénom de l’adhérent ainsi que son statut) pour la saison en cours, ainsi que l’annuaire. Il pourra modifier son compte ainsi que son mot de passe.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Technologies Utilisées
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| **Nom** | **Description** |
+| ------- | ------------- |
+| ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) | Framework. |
+| ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white) | Linux. |
+| ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) | Utilisation de NodeJS pour NPM. |
+| ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) | Contrôle de version. |
+| ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) | Language de code. |
+| ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)| Système de gestion de base de données. |
+| ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white) | Serveur
 
-## Laravel Sponsors
+## Diagramme de cas d'utilisation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<img width="787" alt="Diagramme de cas GA" src="https://github.com/user-attachments/assets/15d6cc95-7b00-472b-b621-21851dd7a301" />
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Diagramme de classe
 
-## Contributing
+<img width="676" alt="Diagramme de classe GA" src="https://github.com/user-attachments/assets/5679a5ce-e03b-4818-85fd-38d37528e81d" />
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Prérequis
+Pour exécuter ce projet, vous devez avoir Debian, Apache2, Mariadb, Laravel, NodeJS et Git.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Installation
 
-## Security Vulnerabilities
+Tout d'abord, vous devez cloner le projet :
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ ```bash
+   git clone https://github.com/Lilly-22/gestion_adherent.git
+   cd gestion_adherent
+   ```
 
-## License
+Puis vous devez vous placer dans le projet et accorder les droits à deux fichiers en utilisant les commandes ci-dessous. Assurez-vous de remplacer "votreusername" par votre nom d'utilisateur sur votre machine :
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```xml
+sudo chown -R votreusername:www-data bootstrap/cache/
+sudo chown -R votreusername:www-data storage
+sudo chmod -R 755 bootstrap/cache/
+sudo chmod -R 755 storage/
+```
+
+
+Après cela, vous devrez exécuter les commandes : 
+```xml
+composer install
+npm install
+npm run build
+```
+
+Ensuite, copiez l'exemple de fichier .env et collez-le dans le même emplacement où il est situé, puis remplissez-le comme indiqué ci-dessous :
+
+
+
+## Créer le premier user
+
+## Utilisation
