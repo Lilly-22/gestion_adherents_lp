@@ -38,6 +38,7 @@ Le club "LyonPalme" est une association sportive de natation avec palmes : monop
 
 ## Diagramme de classe
 
+<img width="897" alt="Capture d’écran 2025-06-08 à 21 26 48" src="https://github.com/user-attachments/assets/d265871a-6bee-4738-8bea-b29c70890bcf" />
 
 
 ## Prérequis
@@ -71,6 +72,7 @@ npm run build
 
 Ensuite, copiez l'exemple de fichier .env et collez-le dans le même emplacement où il est situé, puis remplissez-le comme indiqué ci-dessous :
 
+<img width="409" alt="Capture d’écran 2025-06-09 à 22 55 17" src="https://github.com/user-attachments/assets/519fda99-6a64-4e74-8966-1dd8af2611b6" />
 
 
 ## Créer le premier user
