@@ -12,7 +12,7 @@
 - [Diagramme de classe](#diagramme-de-classe)
 - [Prérequis](#prérequis)
 - [Installation](#installation)
-- [Créer le premier user](#créer-le-premier-user)
+- [Base de données](#base-de-données)
 - [Utilisation](#utilisation)
 
 ## Description
@@ -79,7 +79,7 @@ Ensuite, copiez l'exemple de fichier .env et collez-le dans le même emplacement
    ```bash
    php artisan key:generate
    ```
-**installer artisan si vous ne l'avez pas**
+**Installer artisan si vous ne l'avez pas**
    ```
 php artisan migrate:install
    ```
@@ -90,9 +90,7 @@ php artisan migrate
    ```
 
 
-
-
-## Créer le premier user
+## Base de données
 Une fois la nouvelle database crée sur mariadb :
 
  ```xml
@@ -132,4 +130,70 @@ Pour utiliser la base de donée inscription_club2 :
  FLUSH PRIVILEGES;
 ```
 
+Dans etc/apache2/sites-available faire :
+
+Créer un fichier vide nommé inscription-club.conf, avec les droits administrateur (sudo)
+```xml
+sudo touch inscription-club.conf
+```
+On rentre dans ce fichier
+```xml
+sudo nano inscription-club.conf
+```
+Dans ce dossier on va mettre le virtual host :
+```xml
+<VirtualHost *:80>
+
+     ServerName thedomain.com
+
+     ServerAdmin webmaster@thedomain.com
+
+     DocumentRoot /var/www/websites/gestion_adherents_lp/public
+ 
+    <Directory /var/www/websites/gestion_adherents_lp/public>
+
+         AllowOverride All
+</Directory>
+ 
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+     CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+Maintenant dans etc/apache2/sites-enabled
+
+On voit un dossier après un ls et ensuite faire : sudo a2ensite nomdossier.conf pour activer le site 
+Ici c'est :
+```xml
+sudo a2ensite inscription-club.conf
+```
+Redémarrer Apache :
+```xml
+sudo systemctl reload apache2
+```
+Configuration des droits d'accès pour Laravel :
+
+Remplacez www-data:www-data par apache:apache si nécessaire
+```xml
+ sudo chown -R www-data:www-data storage bootstrap/cache
+ ```
+Puis assurez-vous que le groupe a bien l'écriture
+```xml
+ sudo chmod -R 775 storage bootstrap/cache
+ ```
+
+Pour activer des modules Apache indispensables pour le fonctionnement de Laravel :
+
+```xml
+sudo a2enmod rewrite proxy_fcgi setenvif
+```
 ## Utilisation
+
+Une fois l'installation terminée, vous pouvez vous connecter à l'application en utilisant les identifiants créés juste avant. Une fois connecté, vous pourrez y retrouver :
+
+- L’accès a la modification de tout le compte.
+- Trombinoscope.
+- L'Annuaire.
+- Création de comptes.
+
+Exécutez la commande npm run build, démarrez le serveur Apache2 avec la commande sudo service apache2 start et vérifiez que votre serveur MariaDB est toujours en cours d'exécution. Après cela, vous pourrez accéder à l'application et vous connecter avec l'utilisateur que vous avez créé.
