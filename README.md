@@ -195,5 +195,7 @@ Une fois l'installation terminée, vous pouvez vous connecter à l'application e
 - Trombinoscope.
 - L'Annuaire.
 - Création de comptes.
-
+  
+ Si aucun utilisateur n’existe, créez-en un via l’interface d’inscription ou via un seeder.
+ 
 Exécutez la commande npm run build, démarrez le serveur Apache2 avec la commande sudo service apache2 start et vérifiez que votre serveur MariaDB est toujours en cours d'exécution. Après cela, vous pourrez accéder à l'application et vous connecter avec l'utilisateur que vous avez créé.
