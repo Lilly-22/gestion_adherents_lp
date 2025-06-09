@@ -68,13 +68,68 @@ Après cela, vous devrez exécuter les commandes :
 composer install
 npm install
 npm run build
+npm run dev
 ```
 
 Ensuite, copiez l'exemple de fichier .env et collez-le dans le même emplacement où il est situé, puis remplissez-le comme indiqué ci-dessous :
 
 <img width="409" alt="Capture d’écran 2025-06-09 à 22 55 17" src="https://github.com/user-attachments/assets/519fda99-6a64-4e74-8966-1dd8af2611b6" />
 
+**Générer la clé d’application**
+   ```bash
+   php artisan key:generate
+   ```
+**installer artisan si vous ne l'avez pas**
+   ```
+php artisan migrate:install
+   ```
+**Pour exécuter les migrations**
+
+ ```
+php artisan migrate
+   ```
+
+
+
 
 ## Créer le premier user
+Une fois la nouvelle database crée sur mariadb :
+
+ ```xml
+sudo mysql
+```
+1) Création de la base de données
+
+ ```xml
+ CREATE DATABASE IF NOT EXISTS `inscription_club2`
+
+   CHARACTER SET utf8mb4
+
+   COLLATE utf8mb4_unicode_ci;
+```
+Pour utiliser la base de donée inscription_club2 :
+ ```xml
+ use inscription_club2
+ ```
+2) Suppression préalable de l'utilisateur (sécurité)
+```xml
+ DROP USER IF EXISTS 'inscrip_user'@'localhost';
+ ```
+ 
+3) Création de l’utilisateur sur localhost
+```xml
+ CREATE USER 'inscrip_user'@'localhost'
+   IDENTIFIED BY 'ChangezCeMotDePasse123s!';
+ ```
+4) Attribution des droits CRUD seulement
+```xml
+ GRANT SELECT, INSERT, UPDATE, DELETE
+   ON `inscription_club2`.*
+   TO 'inscrip_user'@'localhost';
+``` 
+5) Prise en compte immédiate des changements
+```xml
+ FLUSH PRIVILEGES;
+```
 
 ## Utilisation
